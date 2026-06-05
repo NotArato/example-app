@@ -46,29 +46,27 @@
 
                         <tbody>
 
-                            @foreach ($student as $students)
-
+                            @foreach ($students as $student)
                                 <tr>
-                                    <td>{{ $students->id }}</td>
+                                    <td>{{ $student->id }}</td>
 
                                     <td>
-                                        
-                                        {{ $students->firstname }}
+                                        {{ $student->firstname }}
                                     </td>
 
-                                    <td>{{ $students->lastname }}</td>
+                                    <td>{{ $student->lastname }}</td>
 
-                                    <td>{{ $students->email }}</td>
+                                    <td>{{ $student->email }}</td>
 
-                                    <td>{{ $students->department }}</td>
+                                    <td>{{ $student->department }}</td>
 
                                     <td>
                                         <div class="d-flex justify-content-center gap-2">
-                                            <a href="/students/{{ $students->id }}/edit" class="btn btn-sm btn-outline-primary">
+                                            <a href="/students/{{ $student->id }}/edit" class="btn btn-sm btn-outline-primary">
                                                 <i class="bi bi-pencil-square"></i> Edit
                                             </a>
 
-                                            <form action="/students/{{ $students->id }}" method="POST"
+                                            <form action="/students/{{ $student->id }}" method="POST"
                                                 onsubmit="return confirm('Are you sure you want to delete this message?');">
                                                 @csrf
                                                 @method('DELETE')
@@ -79,7 +77,6 @@
                                         </div>
                                     </td>
                                 </tr>
-
                             @endforeach
 
                         </tbody>

@@ -50,4 +50,6 @@ Route::get('/contact-edit/{id}/edit', [ContactController::class, 'edit']);
 Route::put('/contact/{id}/', [ContactController::class, 'update']);
 Route::delete('/contact/{id}', [ContactController::class, 'destroy']);
 
-Route::resource('students', StudentController::class);
+// Route::resource('students', StudentController::class);
+
+Route::get('/student', [StudentController::class, 'index']);
