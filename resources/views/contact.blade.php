@@ -268,7 +268,7 @@
         <div class="container">
             <div class="hero-card">
                 <div class="kicker">Support • Contact • Care</div>
-                <h1>{{ $contact }}</h1>
+
                 <p class="lead">
                     Get help for your Apple Store experience—order support, product questions, and account assistance.
                     We’ll guide you to the right team, fast.
@@ -380,6 +380,24 @@
                                 <div class="faq-a">Yes—reach out with your order number and the change you’d like to make.</div>
                             </div>
                         </div>
+
+                        @isset($users)
+                            <div style="height:14px;"></div>
+
+                            <div class="section-title" style="margin-bottom: 10px;">
+                                <h2 style="margin:0; font-size:18px;">Top users in database</h2>
+                                <p style="margin:0;">Showing 10 fake users</p>
+                            </div>
+
+                            <div class="faq" style="gap:10px;">
+                                @foreach($users as $user)
+                                    <div class="faq-item" style="padding:12px 14px;">
+                                        <div class="faq-q" style="margin-bottom:4px;">{{ $user->name }}</div>
+                                        <div class="faq-a" style="font-size:13px;">{{ $user->email }}</div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endisset
                     </div>
                 </div>
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
@@ -48,3 +49,5 @@ Route::post('/contact', [ContactController::class, 'store']);
 Route::get('/contact-edit/{id}/edit', [ContactController::class, 'edit']);
 Route::put('/contact/{id}/', [ContactController::class, 'update']);
 Route::delete('/contact/{id}', [ContactController::class, 'destroy']);
+
+Route::resource('students', StudentController::class);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -15,7 +16,8 @@ class ContactController extends Controller
 
     public function create()
     {
-        return view('contact');
+        $users = User::inRandomOrder()->take(10)->get();
+        return view('contact', compact('users'));
     }
 
     public function store(Request $request)
