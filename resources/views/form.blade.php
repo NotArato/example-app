@@ -263,7 +263,7 @@
                     <div class="panel">
                         <div class="section-title" style="margin-bottom: 12px;">
                             <h2 style="margin:0; font-size:18px;">Send your inquiry</h2>
-                            <p style="margin:0;">We’ll follow up with next steps</p>
+                            <p style="margin:0;">We'll follow up with next steps</p>
                         </div>
 
                         <form method="POST" action="/form/store">

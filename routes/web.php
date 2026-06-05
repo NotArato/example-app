@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
@@ -39,3 +40,11 @@ Route::get('/profile', [ProfileController::class, 'profile']);
 Route::get('/services', [PageController::class, 'services']);
 Route::get('/form', [FormController::class, 'create']);
 Route::post('/form/store', [FormController::class, 'store']);
+
+
+Route::get('/contact-table', [ContactController::class, 'index']);
+Route::get('/contact', [ContactController::class, 'create']);
+Route::post('/contact', [ContactController::class, 'store']);
+Route::get('/contact-edit/{id}/edit', [ContactController::class, 'edit']);
+Route::put('/contact/{id}/', [ContactController::class, 'update']);
+Route::delete('/contact/{id}', [ContactController::class, 'destroy']);
